@@ -1,4 +1,5 @@
 #define _USE_MATH_DEFINES
+#include <QtWidgets>
 #include <yart/camera/perspective.h>
 #include <yart/widget/widget.h>
 #include <chrono>

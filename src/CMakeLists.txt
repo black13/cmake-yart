@@ -1,7 +1,8 @@
-find_package(Eigen3 REQUIRED)
+
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
+
 
 find_package(Qt5 COMPONENTS
         Core
@@ -22,6 +23,7 @@ find_package(Qt5 COMPONENTS
 add_library(yart
     ${PROJECT_SOURCE_DIR}/include/yart/camera/perspective.h
     ${PROJECT_SOURCE_DIR}/include/yart/core/camera.h
+    ${PROJECT_SOURCE_DIR}/include/yart/widget/widget.h
     ${PROJECT_SOURCE_DIR}/src/camera/perspective.cpp
     ${PROJECT_SOURCE_DIR}/src/core/camera.cpp
     ${PROJECT_SOURCE_DIR}/src/widget/widget.cpp
@@ -36,7 +38,7 @@ generate_export_header(yart
     EXPORT_FILE_NAME ${CMAKE_BINARY_DIR}/include/yart/core/common.h
 )
 
-get_target_property(Eigen3_INCLUDE_DIRS Eigen3::Eigen INTERFACE_INCLUDE_DIRECTORIES)
+#get_target_property(Eigen3_INCLUDE_DIRS Eigen3::Eigen INTERFACE_INCLUDE_DIRECTORIES)
 target_compile_features(yart PUBLIC cxx_std_17)
 target_compile_options(yart PRIVATE
     $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>:
@@ -57,9 +59,6 @@ target_include_directories(yart
 )
 
 target_link_libraries(yart
-    PUBLIC
-        Eigen3::Eigen
-    PRIVATE
         Qt5::Widgets
         Qt5::Qml
         Qt5::Quick
