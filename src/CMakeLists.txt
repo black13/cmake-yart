@@ -1,11 +1,30 @@
 find_package(Eigen3 REQUIRED)
 
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+find_package(Qt5 COMPONENTS
+        Core
+        Widgets
+        Qml
+        Svg
+        Quick
+        QuickControls2
+        Charts
+        Multimedia
+        LinguistTools
+        QmlImportScanner
+		PrintSupport 
+        Xml
+    REQUIRED QUIET
+)
 
 add_library(yart
     ${PROJECT_SOURCE_DIR}/include/yart/camera/perspective.h
     ${PROJECT_SOURCE_DIR}/include/yart/core/camera.h
     ${PROJECT_SOURCE_DIR}/src/camera/perspective.cpp
     ${PROJECT_SOURCE_DIR}/src/core/camera.cpp
+    ${PROJECT_SOURCE_DIR}/src/widget/widget.cpp
    
 )
 add_library(yart::yart ALIAS yart)
@@ -40,6 +59,15 @@ target_include_directories(yart
 target_link_libraries(yart
     PUBLIC
         Eigen3::Eigen
+    PRIVATE
+        Qt5::Widgets
+        Qt5::Qml
+        Qt5::Quick
+        Qt5::QuickControls2
+        Qt5::Svg
+        Qt5::Xml
+        Qt5::Gui
+		Qt5::PrintSupport
 )
 
 set_target_properties(yart PROPERTIES

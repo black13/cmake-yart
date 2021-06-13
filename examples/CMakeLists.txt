@@ -6,6 +6,25 @@ configure_file(
     ${CMAKE_CURRENT_BINARY_DIR}/common.h
 )
 
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+find_package(Qt5 COMPONENTS
+        Core
+        Widgets
+        Qml
+        Svg
+        Quick
+        QuickControls2
+        Charts
+        Multimedia
+        LinguistTools
+        QmlImportScanner
+		PrintSupport 
+        Xml
+    REQUIRED QUIET
+)
+
 add_executable(examples main.cpp)
 
 target_compile_features(examples PRIVATE cxx_std_17)
@@ -25,8 +44,18 @@ target_include_directories(examples PRIVATE
 
 target_link_libraries(examples PRIVATE
     yart::yart
+    Qt5::Widgets
+    Qt5::Qml
+    Qt5::Quick
+    Qt5::QuickControls2
+    Qt5::Svg
+    Qt5::Xml
+    Qt5::Gui
+	Qt5::PrintSupport
 )
 
 set_target_properties(examples PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 )
+
+

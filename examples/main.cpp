@@ -1,5 +1,6 @@
 #define _USE_MATH_DEFINES
 #include <yart/camera/perspective.h>
+#include <yart/widget/widget.h>
 #include <chrono>
 #include <cmath>
 #include <iostream>
@@ -9,9 +10,17 @@
 
 int main(int argc, char* argv[])
 {
-	constexpr const unsigned g_width = 400;
-	std::unique_ptr<yart::Camera> g_camera;
+    QApplication a(argc, argv);
+    Widget w;
+
+    constexpr const unsigned g_width = 400;
+    std::unique_ptr<yart::Camera> g_camera;
 
     g_camera = std::make_unique<yart::PerspectiveCamera>();
-    return 0;
+
+    w.resize(100, 100);
+    w.show();
+    return a.exec();
+
+
 }
