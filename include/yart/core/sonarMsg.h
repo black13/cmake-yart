@@ -16,16 +16,18 @@
 #pragma once
 
 #include <QByteArray>
-
+#include <yart/core/common.h>
 #include <string>
 #include <vector>
 
 
-namespace sonarphony
+
+
+namespace  sonarphony
 {
 
 /// \brief Base class for any messages coming from the sonar
-class sonarMsg_t
+class YART_API sonarMsg_t
 {
 public:
 	~sonarMsg_t ();

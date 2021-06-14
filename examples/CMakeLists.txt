@@ -25,7 +25,26 @@ find_package(Qt5 COMPONENTS
     REQUIRED QUIET
 )
 
-add_executable(examples main.cpp)
+
+set(SOURCES main.cpp
+about.cpp
+columnPulser.cpp
+mainWindow.cpp
+palette.cpp
+waterfall.cpp
+about.h
+columnPulser.h
+mainWindow.h
+palette.h
+waterfall.h)
+
+qt5_wrap_ui(SOURCES about.ui
+mainWindow.ui
+preferences.ui
+)
+add_executable(examples ${SOURCES})
+
+
 
 target_compile_features(examples PRIVATE cxx_std_17)
 target_compile_options(examples PRIVATE

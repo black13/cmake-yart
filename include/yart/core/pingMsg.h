@@ -27,7 +27,7 @@ namespace sonarphony
 /// \brief Message encapsulating a ping
 ///
 /// Messages must have a ready status
-class pingMsg_t : public sonarMsg_t
+class YART_API pingMsg_t : public sonarMsg_t
 {
 public:
 	~pingMsg_t ();

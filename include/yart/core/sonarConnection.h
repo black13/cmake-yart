@@ -14,7 +14,7 @@
 // along with SonarPhony.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
-
+#include <yart/core/common.h>
 #include <QTimer>
 #include <QUdpSocket>
 
@@ -24,7 +24,7 @@ namespace sonarphony
 class pingMsg_t;
 
 /// \brief A connection to the sonar device
-class sonarConnection_t : public QObject
+class YART_API sonarConnection_t : public QObject
 {
 	Q_OBJECT
 public:

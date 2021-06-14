@@ -1,5 +1,5 @@
 #pragma once
-
+#include <yart/core/common.h>
 #include <yart/core/camera.h>
 
 namespace yart
