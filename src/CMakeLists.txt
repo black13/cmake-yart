@@ -26,8 +26,28 @@ add_library(yart
     ${PROJECT_SOURCE_DIR}/include/yart/widget/widget.h
     ${PROJECT_SOURCE_DIR}/src/camera/perspective.cpp
     ${PROJECT_SOURCE_DIR}/src/core/camera.cpp
+    ${PROJECT_SOURCE_DIR}/src/core/logger.cpp
+    ${PROJECT_SOURCE_DIR}/src/core/masterCommand.cpp
+    ${PROJECT_SOURCE_DIR}/src/core/masterHandshake.cpp
+
+    ${PROJECT_SOURCE_DIR}/src/core/pingMsg.cpp
+    ${PROJECT_SOURCE_DIR}/src/core/sonarConnection.cpp
+    ${PROJECT_SOURCE_DIR}/src/core/sonarHandshakeMsg.cpp
+    ${PROJECT_SOURCE_DIR}/src/core/sonarMsg.cpp
     ${PROJECT_SOURCE_DIR}/src/widget/widget.cpp
-   
+    ${PROJECT_SOURCE_DIR}/include/yart/core/logger.h>
+    ${PROJECT_SOURCE_DIR}/include/yart/core/masterCommand.h
+    ${PROJECT_SOURCE_DIR}/include/yart/core/masterHandshake.h
+    ${PROJECT_SOURCE_DIR}/include/yart/core/msgPrivate.h
+    ${PROJECT_SOURCE_DIR}/include/yart/core/sonarHandshakeMsg.h
+    ${PROJECT_SOURCE_DIR}/include/yart/core/logger.h
+    ${PROJECT_SOURCE_DIR}/include/yart/core/masterCommand.h
+    ${PROJECT_SOURCE_DIR}/include/yart/core/masterHandshake.h
+    ${PROJECT_SOURCE_DIR}/include/yart/core/msgPrivate.h
+    ${PROJECT_SOURCE_DIR}/include/yart/core/pingMsg.h
+    ${PROJECT_SOURCE_DIR}/include/yart/core/sonarConnection.h
+    ${PROJECT_SOURCE_DIR}/include/yart/core/sonarHandshakeMsg.h
+    ${PROJECT_SOURCE_DIR}/include/yart/core/sonarMsg.h
 )
 add_library(yart::yart ALIAS yart)
 
